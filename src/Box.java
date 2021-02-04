@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Box extends Fruit {
     ArrayList<Fruit> fruits;
@@ -17,6 +16,7 @@ public class Box extends Fruit {
     }
 
     public Box(Fruit[] fruits) {
+        this.fruits = new ArrayList<>();
         Collections.addAll(this.fruits, fruits);
         for (Fruit fruit : this.fruits) {
             setWight(getWight() + fruit.getWight());
@@ -72,9 +72,6 @@ public class Box extends Fruit {
     }
 
     public boolean compare(Box box) {
-        if (this.getWight() != box.getWight()) {
-            return false;
-        }
-        return true;
+        return this.getWight() == box.getWight();
     }
 }
